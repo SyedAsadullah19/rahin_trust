@@ -1,373 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAHIN Trust - Responsive Healthcare</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Global & Responsive Adjustments */
-        :root {
-            --saffron: #FF9933;
-            --green: #138808;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAHIN Trust - Responsive Healthcare</title>
 
-        body { overflow-x: hidden; }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        /* --- BIGGER HEADER --- */
-        .header-container {
-            padding: 3rem 1rem; /* Increased vertical padding */
-        }
+<style>
 
-        .logo-circle {
-            width: 120px; /* Increased from 90px */
-            height: 120px;
-            border: 3px solid #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-            margin: 0 auto;
-        }
+:root{
+--saffron:#FF9933;
+--green:#138808;
+}
 
-        .hindi-title {
-            font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive font sizing */
-            margin-bottom: 5px;
-            color: #000;
-        }
+body{overflow-x:hidden;}
 
-        .english-title {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            letter-spacing: 2px;
-            color: #333;
-        }
 
-        /* --- RESPONSIVE LAYOUT --- */
-        @media (max-width: 768px) {
-            .header-flex-row {
-                flex-direction: column;
-                text-align: center;
-            }
-            .spacer-div { display: none; } /* Remove the balancing spacer on mobile */
-            .logo-circle { margin-bottom: 1.5rem; }
-            .carousel-item { height: 60vh !important; }
-        }
+/* ================= HEADER ================= */
 
-        /* Navbar Styling */
-        .navbar { background-color: #000 !important; }
-        .nav-link {
-            color: #fff !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .nav-link:hover { color: var(--saffron) !important; }
+.header-container{
+padding:3rem 1rem;
+}
 
-        /* Tricolour Stripes */
-        .stripe { height: clamp(5px, 1vw, 10px); width: 100%; }
-        .stripe-saffron { background-color: var(--saffron); }
-        .stripe-white { background-color: #FFFFFF; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-        .stripe-green { background-color: var(--green); }
+/* BIG CIRCULAR LOGO */
+.logo-circle{
+width:clamp(170px,18vw,270px);
+height:clamp(170px,18vw,270px);
+border-radius:50%;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+border:5px solid #000;
+background:#fff;
+margin:auto;
+}
 
-        /* Carousel Grayscale */
-        .grayscale { filter: grayscale(100%); transition: 0.5s; }
-        .grayscale:hover { filter: grayscale(0%); }
+.logo-circle img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+}
 
-        /* Program Cards */
-        .card-program {
-            border: 1px solid #000;
-            border-radius: 0;
-            transition: all 0.3s ease;
-        }
-        .card-program:hover {
-            background-color: #000;
-            color: #fff;
-        }
-        .card-program:hover .text-muted { color: #ccc !important; }
+/* SAME SIZE TITLES */
+.hindi-title,
+.english-title{
+font-size:clamp(1.8rem,3.5vw,2.7rem);
+letter-spacing:1px;
+margin-bottom:5px;
+}
 
-    </style>
+/* MOBILE HEADER */
+@media(max-width:768px){
+.header-flex-row{
+flex-direction:column;
+text-align:center;
+}
+.spacer-div{display:none;}
+.logo-circle{margin-bottom:1.3rem;}
+.carousel-item{height:60vh!important;}
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{background:#000!important;}
+
+.nav-link{
+color:#fff!important;
+font-weight:500;
+text-transform:uppercase;
+transition:.3s;
+}
+
+.nav-link:hover{color:var(--saffron)!important;}
+
+
+/* ================= STRIPES ================= */
+
+.stripe{
+height:clamp(18px,2vw,65px);
+width:100%;
+}
+
+.stripe-saffron{background:var(--saffron);}
+
+.stripe-white{
+background:#fff;
+border-top:1px solid #eee;
+border-bottom:1px solid #eee;
+}
+
+.stripe-green{background:var(--green);}
+
+
+/* ================= CAROUSEL ================= */
+
+.grayscale{
+filter:grayscale(100%);
+transition:.5s;
+}
+
+.grayscale:hover{
+filter:grayscale(0%);
+}
+
+
+/* ================= ASSOCIATES ================= */
+
+.grayscale-filter{
+filter:grayscale(100%);
+opacity:.6;
+transition:.4s;
+max-height:70px;
+}
+
+.grayscale-filter:hover{
+filter:grayscale(0%);
+opacity:1;
+transform:scale(1.1);
+}
+
+.associate-logo{
+padding:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer a:hover{
+color:#FF9933!important;
+transition:.3s;
+}
+
+.text-secondary{
+color:#adb5bd!important;
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-    <div class="container-fluid header-container bg-white">
-        <div class="d-flex align-items-center justify-content-between header-flex-row">
-            <div class="logo shadow-lg"><img src="rt_2.jfif" alt=""></div>
-            
-            <div class="text-center flex-grow-1 px-3">
-                <h2 class="hindi-title fw-bold">ग्रामीण क्षेत्र स्वास्थ्य सुधार नेटवर्क</h2>
-                <h1 class="english-title fw-bold mb-0">RURAL AREA HEALTH IMPROVEMENT NETWORK</h1>
-                <small class="text-muted text-uppercase fw-bold" style="letter-spacing: 3px;">A Registered Charitable Trust</small>
-            </div>
-            
-            <div class="spacer-div" style="width: 120px;"></div>
-        </div>
-    </div>
 
-    <div class="stripe stripe-saffron"></div>
-    <div class="stripe stripe-white"></div>
-    <div class="stripe stripe-green"></div>
+<div class="container-fluid header-container bg-white">
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav w-100 justify-content-around">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Health Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Our Impact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<div class="d-flex align-items-center justify-content-between header-flex-row">
+
+<div class="logo-circle shadow-lg">
+<img src="data:image/jpeg;base64,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" alt="RAHIN Logo">
+</div>
+
+<div class="text-center flex-grow-1 px-3">
+<h2 class="hindi-title fw-bold">ग्रामीण क्षेत्र स्वास्थ्य सुधार संस्था</h2>
+<h1 class="english-title fw-bold mb-0">RURAL AREA HEALTH IMPROVEMENT NETWORK</h1>
+</div>
+
+<div class="spacer-div" style="width:200px;"></div>
+
+</div>
+</div>
+
+<div class="stripe stripe-saffron"></div>
+<div class="stripe stripe-white"></div>
+<div class="stripe stripe-green"></div>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+
+<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+<ul class="navbar-nav w-100 justify-content-around">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Health Programs</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Our Impact</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
 </header>
-<br>
-<section id="heroCarousel" class=" container carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-    </div>
 
-    <div class="carousel-inner">
-        <div class="carousel-item active" style="height: 500px;">
-            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1600" class="d-block w-100 h-100 object-fit-cover grayscale" alt="Rural Healthcare">
-        </div>
 
-        <div class="carousel-item" style="height: 500px;">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1600" class="d-block w-100 h-100 object-fit-cover grayscale" alt="Child Health">
-        </div>
+<!-- ================= CAROUSEL ================= -->
 
-        <div class="carousel-item" style="height: 500px;">
-            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1600" class="d-block w-100 h-100 object-fit-cover grayscale" alt="Healthcare Awareness">
-        </div>
-    </div>
+<section class="container carousel slide carousel-fade mt-4" data-bs-ride="carousel">
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
+<div class="carousel-inner">
+
+<div class="carousel-item active" style="height:500px;">
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1600"
+class="d-block w-100 h-100 object-fit-cover grayscale">
+</div>
+
+<div class="carousel-item" style="height:500px;">
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1600"
+class="d-block w-100 h-100 object-fit-cover grayscale">
+</div>
+
+<div class="carousel-item" style="height:500px;">
+<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1600"
+class="d-block w-100 h-100 object-fit-cover grayscale">
+</div>
+
+</div>
+
+<button class="carousel-control-prev" type="button" data-bs-target=".carousel" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target=".carousel" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
 </section>
 
-<style>
-    .grayscale {
-        filter: grayscale(100%);
-        opacity: 0.8;
-    }
-    
-    .custom-caption {
-        background: rgba(0, 0, 0, 0.7); /* Black translucent box for text */
-        padding: 20px;
-        bottom: 20%;
-        border-left: 5px solid #FF9933; /* Saffron accent border */
-    }
 
-    .carousel-item img {
-        object-fit: cover;
-    }
+<!-- ================= BUTTON ================= -->
 
-    /* Fixing smooth transition */
-    .carousel-fade .carousel-item {
-        transition-duration: 0.8s;
-    }
-</style>
-<br>
-<br>
-<section class="container">
-    <center><button class="btn btn-secondary btn-lg">Join Us</button></center>
+<section class="container text-center my-5">
+<button class="btn btn-secondary btn-lg px-5">Join Us</button>
 </section>
-<br>
+
+
+<!-- ================= PARTNERS ================= -->
+
 <section class="py-5 bg-light border-top border-bottom">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h3 class="fw-bold text-dark text-uppercase">Our Associates & Partners</h3>
-            <div class="mx-auto bg-dark" style="height: 2px; width: 50px;"></div>
-        </div>
 
-        <div class="row align-items-center justify-content-center g-5 text-center">
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="associate-logo">
-                    <img src="https://via.placeholder.com/150x80?text=GROUP+1" alt="Associate 1" class="img-fluid grayscale-filter">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="associate-logo">
-                    <img src="https://via.placeholder.com/150x80?text=GROUP+2" alt="Associate 2" class="img-fluid grayscale-filter">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="associate-logo">
-                    <img src="https://via.placeholder.com/150x80?text=GROUP+3" alt="Associate 3" class="img-fluid grayscale-filter">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="associate-logo">
-                    <img src="https://via.placeholder.com/150x80?text=GROUP+4" alt="Associate 4" class="img-fluid grayscale-filter">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="associate-logo">
-                    <img src="https://via.placeholder.com/150x80?text=GROUP+5" alt="Associate 5" class="img-fluid grayscale-filter">
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+
+<div class="text-center mb-5">
+<h3 class="fw-bold text-uppercase">Our Associates & Partners</h3>
+<div class="mx-auto bg-dark" style="height:2px;width:60px;"></div>
+</div>
+
+<div class="row align-items-center justify-content-center g-5 text-center">
+
+<div class="col-6 col-md-3 col-lg-2">
+<img src="https://via.placeholder.com/150x80?text=GROUP+1" class="img-fluid grayscale-filter">
+</div>
+
+<div class="col-6 col-md-3 col-lg-2">
+<img src="https://via.placeholder.com/150x80?text=GROUP+2" class="img-fluid grayscale-filter">
+</div>
+
+<div class="col-6 col-md-3 col-lg-2">
+<img src="https://via.placeholder.com/150x80?text=GROUP+3" class="img-fluid grayscale-filter">
+</div>
+
+<div class="col-6 col-md-3 col-lg-2">
+<img src="https://via.placeholder.com/150x80?text=GROUP+4" class="img-fluid grayscale-filter">
+</div>
+
+<div class="col-6 col-md-3 col-lg-2">
+<img src="https://via.placeholder.com/150x80?text=GROUP+5" class="img-fluid grayscale-filter">
+</div>
+
+</div>
+</div>
 </section>
 
-<style>
-    /* Styling for the Associates Section */
-    .grayscale-filter {
-        filter: grayscale(100%);
-        opacity: 0.6;
-        transition: all 0.4s ease;
-        max-height: 60px;
-        width: auto;
-    }
 
-    .grayscale-filter:hover {
-        filter: grayscale(0%);
-        opacity: 1;
-        transform: scale(1.1);
-    }
+<!-- ================= INFO CARDS ================= -->
 
-    .associate-logo {
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Extra small divider under the title */
-    h3 {
-        letter-spacing: 1px;
-        font-size: 1.5rem;
-    }
-</style>
 <section class="py-5 bg-white">
-    <div class="container">
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="p-4 border border-dark h-100 shadow-sm">
-                    <h5 class="fw-bold text-uppercase mb-3">Our Mission</h5>
-                    <p class="text-muted">To provide accessible, affordable, and quality healthcare to every rural household.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 bg-black text-white h-100 shadow-sm">
-                    <h5 class="fw-bold text-uppercase mb-3">Our Vision</h5>
-                    <p>A nation where the "Rural-Urban" health divide no longer exists.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 border border-dark h-100 shadow-sm">
-                    <h5 class="fw-bold text-uppercase mb-3">Our Values</h5>
-                    <p class="text-muted">Transparency, Compassion, and Integrity are our core pillars.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+<div class="row g-4 text-center">
+
+<div class="col-md-4">
+<div class="p-4 border border-dark h-100 shadow-sm">
+<h5 class="fw-bold text-uppercase mb-3">Our Mission</h5>
+<p class="text-muted">To provide accessible, affordable, and quality healthcare to every rural household.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="p-4 bg-black text-white h-100 shadow-sm">
+<h5 class="fw-bold text-uppercase mb-3">Our Vision</h5>
+<p>A nation where the Rural-Urban health divide no longer exists.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="p-4 border border-dark h-100 shadow-sm">
+<h5 class="fw-bold text-uppercase mb-3">Our Values</h5>
+<p class="text-muted">Transparency, Compassion, and Integrity are our core pillars.</p>
+</div>
+</div>
+
+</div>
+</div>
 </section>
+
+
+<!-- ================= CONTACT ================= -->
 
 <section class="py-5 bg-light">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-4 text-center text-lg-start">
-                <h2 class="display-5 fw-bold">Get In Touch</h2>
-                <p>Reach out for medical inquiries or volunteer registrations.</p>
-                <div class="d-flex justify-content-center justify-content-lg-start" style="height: 5px; width: 100px;">
-                    <div class="flex-grow-1 bg-warning"></div>
-                    <div class="flex-grow-1 bg-success"></div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="row g-3">
-                    <div class="col-sm-6">
-                        <div class="p-4 border border-dark bg-white">
-                            <h6 class="fw-bold">📍 ADDRESS</h6>
-                            <p class="small mb-0">Building 42, Gram Seva Marg, New Delhi</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="p-4 bg-black text-white">
-                            <h6 class="fw-bold">📞 HELPLINE</h6>
-                            <p class="small mb-0">+91 98765 43210</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-4 text-center text-lg-start">
+<h2 class="fw-bold">Get In Touch</h2>
+<p>Reach out for medical inquiries or volunteer registrations.</p>
+
+<div class="d-flex justify-content-center justify-content-lg-start" style="height:6px;width:120px;">
+<div class="flex-grow-1 bg-warning"></div>
+<div class="flex-grow-1 bg-success"></div>
+</div>
+
+</div>
+
+<div class="col-lg-8">
+<div class="row g-3">
+
+<div class="col-sm-6">
+<div class="p-4 border border-dark bg-white">
+<h6 class="fw-bold">📍 ADDRESS</h6>
+<p class="small mb-0">Building 42, Gram Seva Marg, New Delhi</p>
+</div>
+</div>
+
+<div class="col-sm-6">
+<div class="p-4 bg-black text-white">
+<h6 class="fw-bold">📞 HELPLINE</h6>
+<p class="small mb-0">+91 98765 43210</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer class="bg-black text-white mt-5">
-    <div class="stripe stripe-saffron" style="height: 5px;"></div>
-    <div class="stripe stripe-white" style="height: 5px;"></div>
-    <div class="stripe stripe-green" style="height: 5px;"></div>
 
-    <div class="container py-5">
-        <div class="row g-4">
-            <div class="col-lg-4">
-                <h5 class="text-uppercase fw-bold mb-4 border-bottom border-secondary pb-2">About RAHIN</h5>
-                <p class="small text-secondary">
-                    Rural Area Health Improvement Network (RAHIN) is a registered charitable trust dedicated to bridging the gap in healthcare accessibility across rural sectors through innovation and community service.
-                </p>
-                <div class="d-flex gap-3 mt-3">
-                    <a href="#" class="text-white text-decoration-none">Facebook</a>
-                    <a href="#" class="text-white text-decoration-none">Twitter</a>
-                    <a href="#" class="text-white text-decoration-none">LinkedIn</a>
-                </div>
-            </div>
+<div class="stripe stripe-saffron"></div>
+<div class="stripe stripe-white"></div>
+<div class="stripe stripe-green"></div>
 
-            <div class="col-lg-2 ms-auto">
-                <h5 class="text-uppercase fw-bold mb-4 border-bottom border-secondary pb-2">Links</h5>
-                <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">About Us</a></li>
-                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Our Impact</a></li>
-                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Donate Now</a></li>
-                </ul>
-            </div>
+<div class="container py-5">
 
-            <div class="col-lg-4">
-                <h5 class="text-uppercase fw-bold mb-4 border-bottom border-secondary pb-2">Contact Us</h5>
-                <ul class="list-unstyled small text-secondary">
-                    <li class="mb-2"><strong>Address:</strong> 123 Rural Development Lane, Sector 5, New Delhi, India</li>
-                    <li class="mb-2"><strong>Email:</strong> info@rahintrust.org</li>
-                    <li class="mb-2"><strong>Phone:</strong> +91 000 000 0000</li>
-                    <li class="mb-2"><strong>Reg No:</strong> RAHIN/2024/TRUST</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="row g-4">
 
-    <div class="py-3 bg-dark text-center">
-        <p class="mb-0 small text-secondary">
-            &copy; 2026 Rural Area Health Improvement Network. All Rights Reserved.
-        </p>
-    </div>
+<div class="col-lg-4">
+<h5 class="fw-bold mb-3 border-bottom border-secondary pb-2">About RAHIN</h5>
+<p class="small text-secondary">
+Rural Area Health Improvement Network (RAHIN) is a registered charitable trust dedicated to bridging healthcare gaps across rural sectors.
+</p>
+</div>
+
+<div class="col-lg-4">
+<h5 class="fw-bold mb-3 border-bottom border-secondary pb-2">Links</h5>
+<ul class="list-unstyled small">
+<li><a href="#" class="text-secondary text-decoration-none">Home</a></li>
+<li><a href="#" class="text-secondary text-decoration-none">About</a></li>
+<li><a href="#" class="text-secondary text-decoration-none">Impact</a></li>
+<li><a href="#" class="text-secondary text-decoration-none">Donate</a></li>
+</ul>
+</div>
+
+<div class="col-lg-4">
+<h5 class="fw-bold mb-3 border-bottom border-secondary pb-2">Contact</h5>
+<p class="small text-secondary mb-1">Delhi, India</p>
+<p class="small text-secondary mb-1">info@rahintrust.org</p>
+<p class="small text-secondary">+91 0000000000</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center py-3 bg-dark small text-secondary">
+© 2026 RAHIN Trust — All Rights Reserved
+</div>
+
 </footer>
 
-<style>
-    /* Footer specific styles */
-    footer {
-        letter-spacing: 0.5px;
-    }
-    footer a:hover {
-        color: #FF9933 !important; /* Subtle Saffron hover effect */
-        transition: 0.3s;
-    }
-    .text-secondary {
-        color: #adb5bd !important;
-    }
-</style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
